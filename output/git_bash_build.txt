@@ -1,0 +1,62 @@
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty
+$ cd /y/Projekty/WDSR/
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR
+$ git clone https://github.com/wdsr/exercise1a.git
+Cloning into 'exercise1a'...
+remote: Counting objects: 19, done.
+remote: Total 19 (delta 0), reused 0 (delta 0), pack-reused 19
+Unpacking objects: 100% (19/19), done.
+Checking connectivity... done.
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR
+$ java -version
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR
+$ cd exercise1a/conversions/
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/conversions (master)
+$ mkdir bin
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/conversions (master)
+$ /c/Program\ Files/Java/jdk1.8.0_121/bin/javac.exe wdsr/exercise1/conversions/*.* -d bin/
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/conversions (master)
+$ /c/Program\ Files/Java/jdk1.8.0_121/bin/jar.exe -cvf conversions-1.0.jar -C bin/ .
+added manifest
+adding: wdsr/(in = 0) (out= 0)(stored 0%)
+adding: wdsr/exercise1/(in = 0) (out= 0)(stored 0%)
+adding: wdsr/exercise1/conversions/(in = 0) (out= 0)(stored 0%)
+adding: wdsr/exercise1/conversions/ArrayConverter.class(in = 1231) (out= 592)(deflated 51%)
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a (master)
+$ cd /y/Projekty/WDSR/exercise1a/calculator/
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/calculator (master)
+$ mkdir bin
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/calculator (master)
+$ curl.exe -O http://central.maven.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  424k  100  424k    0     0  91511      0  0:00:04  0:00:04 --:--:--  125k
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/calculator (master)
+$ /c/Program\ Files/Java/jdk1.8.0_121/bin/javac.exe -classpath "commons-lang3-3.4.jar;../conversions/bin/;" "wdsr/exercise1/*.java" -d bin/
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/calculator (master)
+$ /c/Program\ Files/Java/jdk1.8.0_121/bin/jar.exe -cvf calculator-1.0.jar -C bin/ .
+added manifest
+adding: wdsr/(in = 0) (out= 0)(stored 0%)
+adding: wdsr/exercise1/(in = 0) (out= 0)(stored 0%)
+adding: wdsr/exercise1/logic/(in = 0) (out= 0)(stored 0%)
+adding: wdsr/exercise1/logic/Calculator.class(in = 398) (out= 284)(deflated 28%)
+adding: wdsr/exercise1/Main.class(in = 959) (out= 576)(deflated 39%)
+
+Aurelius@AURELIUS-COMP MINGW64 /y/Projekty/WDSR/exercise1a/calculator (master)
+$ /c/Program\ Files/Java/jdk1.8.0_121/bin/java.exe -cp "calculator-1.0.jar;commons-lang3-3.4.jar;../conversions/conversions-1.0.jar" wdsr.exercise1.Main 2 -3 -5
+Min=-5
+Max=2
